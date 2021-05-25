@@ -14,12 +14,12 @@ sudo timedatectl set-timezone Asia/Taipei
 sudo git clone "${REPO_LINK}" "${INSTALL_PATH}"
 
 cd ${INSTALL_PATH}/package
-./Dependency/install-essential.sh
-./Dependency/install-docker.sh
+sudo bash ./Dependency/install-essential.sh
+sudo bash ./Dependency/install-docker.sh
 
-./NVIDIA/install-nv-driver.sh
-./NVIDIA/install-cuda-cudnn.sh
-./NVIDIA/install-nv-docker.sh
+sudo bash ./NVIDIA/install-nv-driver.sh
+sudo bash ./NVIDIA/install-cuda-cudnn.sh
+sudo bash ./NVIDIA/install-nv-docker.sh
 
 cd ${INSTALL_PATH}/script
 for s in $(ls -A -I profile.d); do

@@ -50,11 +50,11 @@ if ! grep -q "nvidia-smi" /etc/rc.local; then
 #
 # By default this script does nothing.
 
-#exit 0' | sudo tee /etc/rc.local
-#    sudo chmod +x /etc/rc.local
-#  fi
-#  sudo sed -i -e '$i /usr/bin/nvidia-smi -pm 1\n' /etc/rc.local
-#fi
+exit 0' | sudo tee /etc/rc.local
+    sudo chmod +x /etc/rc.local
+  fi
+  sudo sed -i -e '$i /usr/bin/nvidia-smi -pm 1\n' /etc/rc.local
+fi
 
 # restart lightdm
 #if service --status-all | grep -Fq 'lightdm'; then
