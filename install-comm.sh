@@ -8,20 +8,18 @@ BIN_PATH="/usr/local/bin"
 set -e -o pipefail
 
 sudo -v
-sudo sed -i "s/DIR_MODE=0755/DIR_MODE=0700/" /etc/adduser.conf
-chmod 700 ${HOME}
 
 sudo timedatectl set-timezone Asia/Taipei
 
 sudo git clone "${REPO_LINK}" "${INSTALL_PATH}"
 
 cd ${INSTALL_PATH}/package
-sudo sh ./Dependency/install-essential.sh
-sudo sh ./Dependency/install-docker.sh
+./Dependency/install-essential.sh
+./Dependency/install-docker.sh
 
-sudo sh ./NVIDIA/install-nv-driver.sh
-sudo sh ./NVIDIA/install-cuda-cudnn.sh
-sudo sh ./NVIDIA/install-nv-docker.sh
+./NVIDIA/install-nv-driver.sh
+./NVIDIA/install-cuda-cudnn.sh
+./NVIDIA/install-nv-docker.sh
 
 cd ${INSTALL_PATH}/script
 for s in $(ls -A -I profile.d); do

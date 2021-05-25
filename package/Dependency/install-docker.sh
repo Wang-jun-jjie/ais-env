@@ -11,7 +11,7 @@ sudo apt-get remove docker docker-engine docker.io containerd runc
 # update apt repo
 sudo apt update
 
-sudo apt-get install \
+sudo apt-get install -y \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -28,13 +28,13 @@ echo \
 
 # install docker
 sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 
 # list all available repo
 # apt-cache madison docker-ce
 
-# start docker
-sudo apt-get install docker-ce=${VERSION_STRING} docker-ce-cli=${VERSION_STRING} containerd.io
+# install specific version of docker
+#sudo apt-get install -y docker-ce=${VERSION_STRING} docker-ce-cli=${VERSION_STRING} containerd.io
 
 # verify docker
 sudo docker run hello-world
