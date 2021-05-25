@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -eo pipefail
+set -e -o pipefail
 
 # change to /tmp
 cd /tmp
