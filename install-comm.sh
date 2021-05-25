@@ -5,6 +5,8 @@ INSTALL_PATH="/opt/ais-env"
 MOTD_PATH="/etc/update-motd.d"
 BIN_PATH="/usr/local/bin"
 
+set -eo pipefail
+
 sudo -v
 sudo sed -i "s/DIR_MODE=0755/DIR_MODE=0700/" /etc/adduser.conf
 chmod 700 ${HOME}
