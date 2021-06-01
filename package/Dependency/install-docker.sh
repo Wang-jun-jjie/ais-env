@@ -42,8 +42,7 @@ sudo docker run hello-world
 # add current user to docker group
 sudo groupadd docker
 sudo usermod -aG docker ${USER}
-sudo chown "$USER":"$USER" /home/"$USER"/.docker -R
-sudo chmod g+rwx "$HOME/.docker" -R
+sudo chmod 666 /var/run/docker.sock
 
 # verify user
 docker run hello-world
