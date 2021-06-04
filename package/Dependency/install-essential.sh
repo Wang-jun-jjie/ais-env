@@ -11,6 +11,7 @@ sudo apt install -y smartmontools \
                     htop \
                     iotop \
                     iftop \
+		    nvtop \
                     smem \
                     earlyoom
 
